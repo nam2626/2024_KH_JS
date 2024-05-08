@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>if문</title>
     <script>
-     
+        //점수 5개 입력받아서, 입력한 점수(0~100)들의 평균을 구함
+        let avg = 0;
+
+        for(let i=0;i<5;i++){
+            avg +=  Number(prompt('점수하나 입력하세요',0));
+        }
+        avg /= 5;
+        //평균에 따른 성적 등급을 출력
+        if(avg >= 90)
+            document.write('A 등급');
+        else if(avg >= 80)
+            document.write('B 등급');
+        else if(avg >= 70)
+            document.write('C 등급');
+        else if(avg >= 60)
+            document.write('D 등급');
+        else
+            document.write('F 등급');
     </script>
 </head>
 <body>
     
 </body>
 </html>
+
+
