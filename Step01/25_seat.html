@@ -12,9 +12,15 @@
     tag += `<p>모두 ${Math.ceil(peoples / line_peoples)}줄이 필요합니다.</p>`;
 
     document.write(tag);
-
+    let seat_number = 1;
     //좌석표 출력하는 코드를 추가
-    
+    let max_line = Math.ceil(peoples / line_peoples);
+    for(let line = 0 ; line < max_line; line++){
+      for(let seat = 0; seat < line_peoples && seat_number <= peoples ; seat++){
+        document.write('좌석 ' + seat_number++, ',');
+      }
+      document.write('<br>');
+    }
   </script>
 </head>
 <body>
