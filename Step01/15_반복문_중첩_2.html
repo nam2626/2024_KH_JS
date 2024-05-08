@@ -16,7 +16,18 @@
         }
     </style>
     <script>
-     
+        let n = 1;
+        let tag = '<table>';
+        for(let i = 0; i < 5; i++){
+            tag += '<tr>';
+            for(let j = 0; j < 5 ; j++){
+                tag += `<td>${n++}</td>`;
+            }
+            tag += '</tr>';
+        }
+        tag += '</table>';
+
+        document.write(tag);
     </script>
 </head>
 <body>
