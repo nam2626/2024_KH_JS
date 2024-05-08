@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>문제</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .container{
+      width: 800px;
+      margin: 0 auto;
+    }
+    table{
+      border-collapse: collapse;
+    }
+    td{
+      width: 100px;
+      border:1px solid black;
+      vertical-align: bottom;
+      text-align: center;
+    }
+    .icon{
+      width: 64px;
+      height: 64px;
+      display: inline-block;
+      border: 1px solid red;
+    }
+  </style>
   <script>
-    let peoples = Number(prompt('입장객은 몇 명인가요?',0));
-    let line_peoples = Number(prompt('한 줄에 몇 명씩 앉습니까?',0));
+    let peoples = Number(prompt('입장객은 몇 명인가요?', 0));
+    let line_peoples = Number(prompt('한 줄에 몇 명씩 앉습니까?', 0));
 
     let tag = `<h1>자리배치도</h1>`;
     tag += `<p>모두 ${Math.ceil(peoples / line_peoples)}줄이 필요합니다.</p>`;
@@ -15,14 +41,21 @@
     let seat_number = 1;
     //좌석표 출력하는 코드를 추가
     let max_line = Math.ceil(peoples / line_peoples);
-    for(let line = 0 ; line < max_line; line++){
-      for(let seat = 0; seat < line_peoples && seat_number <= peoples ; seat++){
-        document.write('좌석 ' + seat_number++, ',');
+    let seat_tag = '<div class=\'container\'><table>';
+    for (let line = 0; line < max_line; line++) {
+      seat_tag += '<tr>';
+      for (let seat = 0; seat < line_peoples && seat_number <= peoples; seat++) {
+        seat_tag += `<td><span class='icon'></span><br>좌석 : ${seat_number++}</td>`;
       }
-      document.write('<br>');
+      seat_tag += '</tr>';
     }
+    seat_tag += '</table></div>';
+    console.log(seat_tag);
+    document.write(seat_tag);
   </script>
 </head>
+
 <body>
 </body>
+
 </html>
