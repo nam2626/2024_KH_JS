@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>if문</title>
+    <title>switch</title>
     <script>
-      
-        </script>
+         let score = Math.ceil(Math.random() * 100);
+        document.write(`<p>${score}</p>`);
+        score = Math.floor(score / 10);
+
+        switch(score){
+            case 10:
+            case 9:
+                document.write('A');
+                break;
+            case 8: 
+                document.write('B');
+                break;
+            case 7: 
+                document.write('C');
+                break;
+            case 6: 
+                document.write('D');
+                break;
+            default:
+                document.write('F');
+        }
+    </script>
 </head>
 <body>
     
