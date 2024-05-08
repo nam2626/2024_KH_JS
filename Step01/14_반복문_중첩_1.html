@@ -14,7 +14,18 @@
         }
     </style>
     <script>
-    
+        let tag = '';
+
+        for(let dan = 2; dan < 10; dan++){
+            tag += `<div><h2>${dan}단</h2>`;
+            for(let i = 1; i < 10; i++){
+                tag += `<p>${dan} * ${i} = ${dan*i}</p>`;
+            }
+            tag += '</div>';
+        }
+        console.log(tag);
+        document.write(tag);
+
     </script>
 </head>
 <body>
