@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문제</title>
+  <script>
+    let peoples = Number(prompt('입장객은 몇 명인가요?',0));
+    let line_peoples = Number(prompt('한 줄에 몇 명씩 앉습니까?',0));
+
+    let tag = `<h1>자리배치도</h1>`;
+    tag += `<p>모두 ${Math.ceil(peoples / line_peoples)}줄이 필요합니다.</p>`;
+
+    document.write(tag);
+
+    //좌석표 출력하는 코드를 추가
+    
+  </script>
+</head>
+<body>
+</body>
+</html>
