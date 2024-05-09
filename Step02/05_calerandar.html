@@ -33,7 +33,16 @@
         }
     </style>
     <script>
-      
+      //1. 오늘 날짜 생성
+        let today = new Date();
+      //2. 현재월의 첫번째 날짜, 현재월의 마지막 날짜를 구함
+        let startDate = new Date(today.getFullYear(),today.getMonth(),1);
+        let endDate = new Date(today.getFullYear(),today.getMonth()+1,0);
+        console.log(startDate.toLocaleDateString(),endDate.toLocaleDateString());
+      //요일값 일 - 0 ~ 토 - 6
+      //3. 달력상으로 첫번째 칸 날짜를 구함(요일 값을 이용)
+
+      //4. 달력상으로 마지막 칸 날짜를 구함(요일 값을 이용)
     </script>
 </head>
 <body>
