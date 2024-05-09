@@ -41,7 +41,9 @@
         console.log(startDate.toLocaleDateString(),endDate.toLocaleDateString());
       //요일값 일 - 0 ~ 토 - 6
       //3. 달력상으로 첫번째 칸 날짜를 구함(요일 값을 이용)
-
+        console.log(startDate.getDay());
+        startDate.setDate(startDate.getDate() - startDate.getDay());
+        console.log(startDate.toLocaleDateString());
       //4. 달력상으로 마지막 칸 날짜를 구함(요일 값을 이용)
     </script>
 </head>
