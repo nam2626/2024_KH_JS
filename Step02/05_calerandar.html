@@ -63,7 +63,24 @@
         let tag = `<h2>${today.getMonth() + 1} 월</h2>`;
         tag += '<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>';
         //2. 달력 일수를 조립
-        
+        // 2-1 반복문 중첩 사용했을때
+        // 출력 달력의 줄수
+        let line = Math.ceil((endDate.getTime() - startDate.getTime()) / (7 * 24 * 60 * 60 * 1000));
+        console.log(line);
+
+        for(let i=0;i<line;i++){
+            tag += '<tr>';
+            for(let j = 0; j < 7; j++){
+                if(startDate.getMonth() == today.getMonth())
+                    tag += `<td>${startDate.getDate()}</td>`;
+                else
+                    tag += `<td class='disable'>${startDate.getDate()}</td>`;
+                startDate.setDate(startDate.getDate() + 1);
+            }
+            tag += '</tr>';
+        }
+        tag += '</table>';
+
         document.write(tag);
     </script>
 </head>
