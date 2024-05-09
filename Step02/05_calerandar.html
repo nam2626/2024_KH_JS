@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>달력</title>
     <style>
-        h2{
+        h2 {
             text-align: center;
         }
-        table{
-            margin:0 auto;
+
+        table {
+            margin: 0 auto;
             border-collapse: collapse;
         }
-        th, td{
+
+        th,
+        td {
             width: 100px;
             border: 1px solid black;
             padding: 5px;
         }
-        td{
+
+        td {
             height: 100px;
             vertical-align: top;
             text-align: right;
         }
-        td:first-child, th:first-child{
-            color:red;
+
+        td:first-child,
+        th:first-child {
+            color: red;
         }
-        td:last-child, th:last-child{
-            color:blue;
+
+        td:last-child,
+        th:last-child {
+            color: blue;
         }
-        .disable{
-            color:gray !important;
+
+        .disable {
+            color: gray !important;
         }
     </style>
     <script>
-      //1. 오늘 날짜 생성
+        //1. 오늘 날짜 생성
         let today = new Date();
-      //2. 현재월의 첫번째 날짜, 현재월의 마지막 날짜를 구함
-        let startDate = new Date(today.getFullYear(),today.getMonth(),1);
-        let endDate = new Date(today.getFullYear(),today.getMonth()+1,0);
-        console.log(startDate.toLocaleDateString(),endDate.toLocaleDateString());
-      //요일값 일 - 0 ~ 토 - 6
-      //3. 달력상으로 첫번째 칸 날짜를 구함(요일 값을 이용)
+        //2. 현재월의 첫번째 날짜, 현재월의 마지막 날짜를 구함
+        let startDate = new Date(today.getFullYear(), today.getMonth(), 1);
+        let endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        console.log(startDate.toLocaleDateString(), endDate.toLocaleDateString());
+        //요일값 일 - 0 ~ 토 - 6
+        //3. 달력상으로 첫번째 칸 날짜를 구함(요일 값을 이용)
         console.log(startDate.getDay());
         startDate.setDate(startDate.getDate() - startDate.getDay());
         console.log(startDate.toLocaleDateString());
-      //4. 달력상으로 마지막 칸 날짜를 구함(요일 값을 이용)
+        //4. 달력상으로 마지막 칸 날짜를 구함(요일 값을 이용)
+        console.log(6 - endDate.getDay());
+        endDate.setDate(endDate.getDate() + 6 - endDate.getDay());
+        console.log(endDate.toLocaleDateString());
+        //테이블 태그 조립
+        //1. 요일 먼저 조립
+        let tag = `<h2>${today.getMonth() + 1} 월</h2>`;
+        tag += '<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>';
+        //2. 달력 일수를 조립
+        
+        document.write(tag);
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
