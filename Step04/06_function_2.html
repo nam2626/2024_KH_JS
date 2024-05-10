@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>함수</title>
     <script>
-      
+        function sum(a,b){
+            a = a == undefined ? 0 : a;
+            b = b == undefined ? 0 : b;
+            return a+b;
+        }
+        document.write(`<p>${sum()}</p>`);
+        document.write(`<p>${sum(10)}</p>`);
+        document.write(`<p>${sum(10,20)}</p>`);
+        
+        //default parameter : 주의할 점은 마지막 매개변수부터 지정
+        function minus(a=0,b=0){
+            return a-b;
+        }
+        document.write(`<p>${minus()}</p>`);
+        document.write(`<p>${minus(10)}</p>`);
+        document.write(`<p>${minus(10,20)}</p>`);
     </script>
 </head>
 <body>
