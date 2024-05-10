@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또</title>
     <style>
-        table{
+        table {
             margin: 0 auto;
             border-collapse: collapse;
         }
 
-        td{
-            border:1px solid black;
+        td {
+            border: 1px solid black;
             width: 100px;
             text-align: center;
             height: 100px;
         }
-        caption{
+
+        caption {
             font-weight: bold;
             font-size: 1.5em;
             padding: 10px 0px;
@@ -25,22 +27,29 @@
     <script>
         let lotto = [];
         //로또 번호 5셋트 저장
-        while(lotto.length<5){
+        while (lotto.length < 5) {
             //로또번호 한셋트 배열에 저장
             let arr = [];
-            
-            while(arr.length < 6){
+
+            while (arr.length < 6) {
                 let n = Math.floor(Math.random() * 45) + 1;
-                if(!(n in arr)) 
-                arr.push(n);
+                if (!(n in arr))
+                    arr.push(n);
             }
             lotto.push(arr);
         }
-       //로또번호 출력
-       console.log(lotto);
+        //로또번호 출력
+        let tag = '<table>';
+        for(i in lotto){
+            tag += `<tr><td>${lotto[i].join('</td><td>')}</td></tr>`;
+        }
+        tag += '</table>';
+        document.write(tag);
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
