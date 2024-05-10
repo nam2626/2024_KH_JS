@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding:30px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">로또번호 생성</button>
+    <hr>
+    <div id="area"></div>
+    <script>
+        let btn = document.getElementById('btn');
+        let txt = document.getElementById('txt');
+        let area = document.getElementById('area');
+
+        btn.onclick = () => {
+            let row = Number(txt.value);
+            let tag = '<table>';
+            //row 갯수만큼 로또번호 셋트를 표로 만들어서 tag 변수에 추가
+            //숫자는 랜덤으로 처리
+            //----------------------
+           
+            //----------------------
+            area.innerHTML = tag;
+        }
+
+    </script>
+</body>
+</html>

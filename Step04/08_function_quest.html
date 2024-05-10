@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function quest</title>
+    <script>
+        /*
+            매개 변수로 숫자를 2개 받아서
+            숫자에 해당하는 만큼 행과 열에 해당하는 표를 출력
+
+            숫자 3, 4  ---> 3행 4열짜리 표 ---> 숫자는 1부터 순차적으로 채움
+            단, 숫자가 하나라도 모자르면 표를 만드는 작업을 중단하고,
+            숫자를 전부 받게끔 알려주는 텍스트를 출력
+        */
+        function makeTable(){
+            //행과 열번호 읽어오는 부분
+            let row = document.querySelector('#rows').value;
+            let col = document.querySelector('#cols').value;
+            let tag = '<table>';
+            //---------------
+            // 행, 열 개수를 이용해서 tag로 표를 작성
+        
+            //---------------
+            document.querySelector("#container").innerHTML = tag;
+            
+        }
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding:30px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="cols" placeholder="열 개수">
+    <input type="text" id="rows" placeholder="행 개수">
+    <button onclick="makeTable()">표 생성</button>
+    <div id="container"></div>
+</body>
+</html>
