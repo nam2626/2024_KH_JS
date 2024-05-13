@@ -43,8 +43,9 @@
                 lotto.push(arr);
                 tag += `<tr>${arr.reduce((acc,cur,idx) => `${acc}<td>${cur}</td>`, '')}</tr>`;
             }
+            // tag += lotto.reduce((acc, cur, idx)=>`${acc}<tr>${cur.reduce((a, c, i) => `${a}<td>${c}</td>`,'')}</tr>`,'');
             tag += '</table>';
-
+            console.log(tag);
             //----------------------
             area.innerHTML = tag;
         }
