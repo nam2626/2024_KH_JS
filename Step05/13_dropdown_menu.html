@@ -57,7 +57,16 @@
         }
     </style>
     <script>
-        
+        window.onload = () => {
+            let sub_menu_height = document.querySelector('#sub_menu_container').scrollHeight;
+            console.log(sub_menu_height);
+            document.querySelector('nav').onmouseenter = () => {
+                document.querySelector('#sub_menu_container').style.height = sub_menu_height + 'px';
+            }
+            document.querySelector('nav').onmouseleave = () => {
+                document.querySelector('#sub_menu_container').style.height = '0px';
+            }
+        }
     </script>
 </head>
 <body>
