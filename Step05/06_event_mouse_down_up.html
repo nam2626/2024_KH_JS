@@ -7,8 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>event</title>
     <script>
-       
+        window.onload = () => {
+            // content, btn 선택
+            let content = document.querySelector('#content');
+            let btn = document.querySelector('#btn');
 
+            btn.onmousedown = (e) => {
+                console.log(e);
+                content.innerHTML = `${e.button} 마우스 버튼 누름`;
+            }            
+            btn.onmouseup = (e) => {
+                console.log(e);
+                content.innerHTML = `${e.button} 마우스 버튼 뗌`;
+            }            
+        }
     </script>
 </head>
 
