@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>event</title>
     <script>
-       
+        window.onload = () => {
+            //h1을 더블클릭(ondblclick)하면 h1 태그 내부에 있는 내용을 경고창으로 출력
+            const h1 = document.querySelector('h1');
+            
+            h1.ondblclick = ()=>{
+                alert(h1.innerHTML);
+
+                //화살표 함수를 사용할 경우 this 키워드는 상위 객체를 지정
+                // alert(this.innerHTML);
+                console.log(this);
+            }
+        }
     </script>
 </head>
 <body>
