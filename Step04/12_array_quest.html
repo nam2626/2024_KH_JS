@@ -30,7 +30,21 @@
             //row 갯수만큼 로또번호 셋트를 표로 만들어서 tag 변수에 추가
             //숫자는 랜덤으로 처리
             //----------------------
-            
+            let lotto = [];
+            while (lotto.length < row) {
+                //로또번호 한셋트 배열에 저장
+                let arr = [];
+
+                while (arr.length < 6) {
+                    let n = Math.floor(Math.random() * 45) + 1;
+                    if (!(n in arr))
+                        arr.push(n);
+                }
+                lotto.push(arr);
+                tag += `<tr>${arr.reduce((acc,cur,idx) => `${acc}<td>${cur}</td>`, '')}</tr>`;
+            }
+            tag += '</table>';
+
             //----------------------
             area.innerHTML = tag;
         }
