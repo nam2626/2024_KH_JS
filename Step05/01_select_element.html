@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>select element</title>
-    <script>
-        //document.getElementById('아이디 속성값'); --> 아이디 속성값으로 선택
-    </script>
+    
     <style>
         p{
             background-color: red;
@@ -27,5 +25,44 @@
     <p>4</p>
     <p>5</p>
     <h1>제목 태그</h1>
+    <script>
+        //document.getElementById('아이디 속성값'); --> 아이디 속성값으로 선택
+        let txt = document.getElementById('txt');
+        console.log(txt.value);
+        // document.getElementsByTagName('태그명'); --> 배열 형태로 반환
+        // document.getElementsByClassName('클래스 속성값'); --> 배열 형태로 반환
+        // document.getElementsByName('name 속성값'); --> 배열 형태로 반환
+        // document.querySelector('선택자'); --> 하나의 요소만 반환
+        txt = document.querySelector('#txt');
+        console.log(txt.value);
+        // 선택된 태그의 속성값(property 값)을 변경
+        txt.value = '바뀐값';
+        //type 속성값을 password
+        txt.type = 'password';
+        // document.querySelectorAll('선택자') --> 배열 형태로 반환
+        let p = document.querySelectorAll('p');
+        console.log(p);
+        for(tag of p){
+            console.log(tag.innerHTML);
+            //배경색을 녹색으로 변경
+            tag.style.backgroundColor = 'green';
+            //글자색을 흰색으로 변경 --> html 색상값
+            tag.style.color = '#ffffff';
+            //밑줄 추가
+            tag.innerHTML = `<b>${String.fromCharCode(Math.floor(Math.random()*26)+65)}</b>`;
+        }
+
+        //input 태그 전부 선택
+        //입력된 값을 삭제, 배경색을 전부 빨강색으로 처리, 입력할 수 없게끔 처리
+        let input = document.querySelectorAll('input');
+        input.forEach((obj) => {
+            obj.value = '';
+            obj.style.backgroundColor='red';
+            // obj.disabled = true;
+            obj.readOnly = true;
+        });
+       
+
+    </script>
 </body>
 </html>
