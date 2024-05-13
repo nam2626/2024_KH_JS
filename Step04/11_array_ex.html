@@ -38,15 +38,47 @@
         const obj3 = {...obj1, ...obj2};
         console.log(obj3);
         obj3.printInfo();
-        
+
         //배열
+        const arr4 = [...arr1, ...arr2,11,12,13,14,15];
         //map()
+        //배열의 각 요소를 변환하여 새로운 배열을 만들어서 반환
+        //기존 배열의 요소를 변경하지 않음
+        const arr5 = arr4.map(function(item, idx, ary){
+            console.log(item,idx,ary);
+            return item * 2;
+        });
+        console.log(arr4);
+        console.log(arr5);
+        
+        const arr6 = arr4.map((item) => item * 2);
+        console.log(arr6);
 
-        //find()
-
-        //filter()
-
+        //find() - 최초의 한개 값만 리턴
+        //배열의 각 요소를 검사하여 조건에 맞는 요소중 제일 첫번재 값만 반환
+        //5의 배수를 검색
+        let result = arr4.find((item, idx, arr) => {
+            return item % 5 == 0;
+        });
+        result = arr4.find((item, idx, arr) => item % 5 == 0);
+        console.log(result);
+        //filter() - 여러개 값을 배열로 만들어서 리턴
+        //배열의 각 요소를 검사하여 조건에 맞는 요소들을 가지고 새로운 배열을 만들어서 반환
+        result = arr4.filter((item, idx, arr) => item % 5 == 0);
+        console.log(result);
+        console.log(arr4); //기존 배열의 값은 건들지 않는다.
+        
         //reduce()
+        //배열의 각 요소들을 누적하여 하나의 값으로 만들어서 반환
+        //기존 배열의 요소를 변경하지 않음
+        //총합, 평균, 태그로 조립....
+        //arr4에 있는 모든 값의 합을 출력
+        //acc : 이전 연산까지 누적된 값
+        //cur : 현재 배열 요소
+        //idx : 현재 인덱스 값
+        let total = arr4.reduce((acc, cur, idx) => acc + cur, 0); 
+
+        console.log(total);
     </script>
 </head>
 <body>
