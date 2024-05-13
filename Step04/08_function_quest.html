@@ -21,7 +21,15 @@
             let tag = '<table>';
             //---------------
             // 행, 열 개수를 이용해서 tag로 표를 작성
-        
+            let n = 1;
+            for(let i=0;i<row;i++){
+                tag += '<tr>';
+                for(let j=0;j<col;j++){
+                    tag += `<td>${n++}</td>`;
+                }
+                tag += '</tr>';
+            }
+            tag += '</table>';
             //---------------
             document.querySelector("#container").innerHTML = tag;
             
