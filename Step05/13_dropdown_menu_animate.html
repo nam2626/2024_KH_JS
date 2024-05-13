@@ -57,7 +57,26 @@
         }
     </style>
     <script>
-        
+        window.onload = () => {
+            let sub_menu_height = document.querySelector('#sub_menu_container').scrollHeight;
+            let open_menu = {
+                height : sub_menu_height + 'px'
+            };
+            let close_menu = {
+                height : '0px'
+            }
+            let options = {
+                duration : 1000,
+                iterations : 1,
+                fill : 'forwards'
+            };
+            document.querySelector('nav').onmouseenter = () => {
+                document.querySelector('#sub_menu_container').animate(open_menu,options);
+            }
+            document.querySelector('nav').onmouseleave = () => {
+                document.querySelector('#sub_menu_container').animate(close_menu,options);
+            }
+        }
     </script>
 </head>
 <body>
