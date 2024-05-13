@@ -15,7 +15,21 @@
         }
     </style>
     <script>
-       
+        window.onload = () => {
+            //div 태그 선택
+            let div = document.querySelector('#div');
+
+            // div에 onmouseenter 이벤트가 발생시 테두리를 빨강색으로 지정
+            div.onmouseenter = () => {
+                div.style.borderColor = 'red';
+                console.log('onmouseenter');
+            }
+            // div에 onmouseleave 이벤트가 발생시 테두리를 검정색으로 지정
+            div.onmouseleave = () => {
+                div.style.borderColor = 'black';
+                console.log('onmouseleave');
+            }
+        }
         
     </script>
 </head>
