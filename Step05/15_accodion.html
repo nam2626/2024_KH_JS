@@ -84,6 +84,14 @@
             }
         });
         //all close 버튼 눌렀을때 모든 content를 0px로 바꾸는 작업
+        //1. 버튼 선택
+        //2. 선택한 버튼에게 클릭이벤트 적용
+        document.querySelector('#btn_close').onclick = () => {
+            //3. 클릭이벤트에 전체 content에 height를 0px로 처리
+            document.querySelectorAll('.content').forEach((obj) => {
+                obj.style.height = '0px';
+            });
+        }
        }
     </script>
 </head>
