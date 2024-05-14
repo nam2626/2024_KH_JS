@@ -18,7 +18,14 @@
             //데이터 요청에 성공 했을 때
             request.addEventListener('load', (t) => {
                 console.log(t);
+                let r = t.currentTarget.response;
+                let items = r.items;
                 let tag = '';
+                // items.forEach(obj => {
+                //     tag += `<p><a href='${obj.link}'>${obj.title}</a></p>`;
+                //     tag += `<p>${obj.description}</p>`
+                // });
+                tag = items.reduce((acc,cur,idx) => acc + `<p><a href='${cur.link}'>${cur.title}</a></p><p>${cur.description}</p>`,'');
 
                 document.querySelector('.result').innerHTML = tag;
             });
