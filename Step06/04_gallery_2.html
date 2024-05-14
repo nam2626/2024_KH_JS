@@ -52,7 +52,53 @@
     </style>
     <script>
         window.onload = () =>{
-            
+            document.querySelectorAll('.thumnail > img').forEach((obj) => {
+            obj.onclick = (e) => {
+                document.querySelector('.main_img').src = e.target.src;
+            }
+           });
+           let left_option = {
+            duration : 500,
+            iteration:1,
+            fill:'backwards'
+           }
+           let right_prev_option = {
+            duration : 0,
+            iteration:1,
+            fill:'forwards'
+           }
+           let right_after_option = {
+            duration : 500,
+            iteration:1,
+            fill:'forwards'
+           }
+           let slideMoving = false;
+
+           document.querySelector('.left_arrow').onclick = () =>{
+            if(slideMoving) return;
+            slideMoving = true;
+            let li = document.querySelector('.thumnail li:first-child');
+            li.animate({marginLeft:'-80px'},left_option).onfinish = () => {
+                //애니메이션이 진행된 썸네일을 마지막 썸네일 위치로 이동
+                document.querySelector('.thumnail').append(li);
+                slideMoving = false;
+            }
+           }
+           document.querySelector('.right_arrow').onclick = () =>{
+                if(slideMoving) return;
+                slideMoving = true;
+                //1. 마지막 썸네일을 선택 last-child
+                let li = document.querySelector('.thumnail li:last-child');
+                //2. 여백을 미리 -80px 지정 marginLeft
+                li.animate({marginLeft:'-80px'},right_prev_option);
+                //3. 마지막 썸네일을 맨 앞에다가 붙임(prepend(선택된 태그))
+                document.querySelector('.thumnail').prepend(li);
+                //4. 애니메이션은 여백을 0으로 지정
+                li.animate({marginLeft:'0px'},right_after_option).onfinish = () => {
+                    slideMoving = false;
+                };
+            }
+
         }
     </script>
 </head>
