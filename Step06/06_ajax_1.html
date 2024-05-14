@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajax</title>
     <script>
+        function RequestInfo(){
+            let request = new XMLHttpRequest();
+
+            //요청할 URL
+            request.open('GET','https://api.openweathermap.org/data/2.5/weather?id=1835847&appid=API KEY');
+
+            //결과 데이터를 받을 형식
+            request.responseType = 'json';
+
+            //이벤트 처리
+            //데이터 요청에 성공 했을 때
+            request.addEventListener('load', (t) => {
+                console.log(t);
+            });
+            //데이터 요청에 실패 했을 때
+            request.addEventListener('error', (t) => {
+                console.log(t);
+            });
+
+            //데이터 요청
+            request.send();
+        }
         window.onload = () => {
-            
+            document.querySelector('button').onclick = () => {
+                //ajax를 이용하여 openweather의 날씨 정보를 읽어옴
+                RequestInfo();
+            }
         }
     </script>
 </head>
