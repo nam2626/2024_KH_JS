@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>event</title>
     <script>
-      
+        window.onload = () => {
+            let id = document.querySelector('#id');
+            let pass = document.querySelector('#pass');
+            document.querySelector('#frm').onsubmit = (e) => {
+                // alert(id.value + ' ' + pass.value);
+                //아이디와 암호 중 하나라도 입력하지 않으면 전송이 되지 않게끔 처리
+                if(id.value == '' || pass.value.length == 0){
+                    e.preventDefault();
+                    alert('아이디와 암호를 반드시 입력해야합니다.');
+                    if(id.value.length == 0) id.focus(); //해당 태그 선택
+                    if(pass.value.length == 0) pass.focus(); //해당 태그 선택
+                }
+            }
+        }
     </script>
 </head>
 <body>
