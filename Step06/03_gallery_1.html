@@ -66,11 +66,31 @@
             iterations : 1,
             fill : 'forwards'
            };
+
+           let slideMoving = false;
            //왼쪽 화살표 클릭 했을때
            document.querySelector('.left_arrow').onclick = () =>{
-                index++;
-                let left_move = {marginLeft : `-${index * 80}px`};
-                document.querySelector('.thumnail').animate(left_move,options);
+                if(slideMoving) return;
+                if(idx * 80 + thumnailBarWidth == thumnailWidth) return;
+                slideMoving = true;
+                idx++;
+                let left_move = {marginLeft : `-${idx * 80}px`};
+                document.querySelector('.thumnail').animate(left_move,options).onfinish = () => {
+                    console.log('애니메이션 종료');
+                    slideMoving = false;
+                };
+           }
+           //오른쪽 화살표를 클릭 했을 떄
+           document.querySelector('.right_arrow').onclick = () => {
+            if(slideMoving) return;
+            if(idx == 0) return;
+            slideMoving = true;
+            idx--;
+            let right_move = {marginLeft : `-${idx * 80}px`};
+            document.querySelector('.thumnail').animate(right_move,options).onfinish = () => {
+                    console.log('애니메이션 종료');
+                    slideMoving = false;
+                };
            }
         }
     </script>
