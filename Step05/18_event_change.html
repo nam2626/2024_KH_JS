@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>event</title>
     <script>
-    
+        window.onload = () => {
+            document.querySelector('#sel').onchange = (e) => {
+                //이벤트 객체의 target은 현재 이벤트가 발생한 태그
+                console.log(e.target.value);
+                document.querySelector('#txt').value = e.target.value;
+            }
+        }
 
     </script>
 </head>
