@@ -7,7 +7,10 @@
     <script>
        //range 선택해서 값이 바뀌었을때 현재 값을 로그로 출력
        window.onload = () => {
-       
+            document.querySelector('#val').onchange = (e) => {
+                console.log(e.target.value);
+                document.querySelector('img').style.opacity = e.target.value / 10;
+            }
        }
     </script>
 </head>
