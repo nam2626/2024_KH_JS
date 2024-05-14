@@ -67,7 +67,24 @@
         }
     </style>
     <script>
-       
+       window.onload = () => {
+        let content = document.querySelectorAll('.content');
+        document.querySelectorAll('.title').forEach((obj, idx) =>{
+            obj.onclick = () => {
+                //현재 태그의 이전 위치에 있는 태그(형요소를 선택)
+                // console.log(obj.previousElementSibling);
+                //현재 태그의 다음 위치에 있는 태그(동생요소를 선택)
+                console.log(obj.nextElementSibling);
+                
+                if(obj.nextElementSibling.clientHeight == 0){
+                    obj.nextElementSibling.style.height = obj.nextElementSibling.scrollHeight + 'px';
+                }else{
+                    obj.nextElementSibling.style.height = '0px';
+                }
+            }
+        });
+        
+       }
     </script>
 </head>
 
