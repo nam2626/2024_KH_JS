@@ -5,7 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>event</title>
     <script>
-     
+      window.onload = () => {
+        let txt = document.querySelector('#txt');
+
+        txt.onfocus = () => {
+          txt.style.backgroundColor = 'yellow';
+        }
+        //onblur 이벤트 처리는 배경색을 흰색으로 변경
+        txt.onblur = () => {
+          txt.style.backgroundColor = 'white';
+        }
+
+        //a 태그가 선택이되면 글꼴을 두껍게 설정, 선택이 풀리면 원상태로 돌림
+        //1. 태그 선택
+        //2. 이벤트 적용
+        //3. 2번에 이벤트 작업을 처리 할 코드 작성
+        let a = document.querySelector('a');
+        a.onfocus = function(){
+          this.style.fontWeight = 'bold';
+        }
+        a.onblur = function(){
+            this.style.fontWeight = 'normal';
+        }
+      }
     </script>
   </head>
 
