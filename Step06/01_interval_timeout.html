@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeout, interval</title>
+    <script>
+        function timeoutTest(){
+            console.log(`10초 뒤에 실행 - ${new Date().toLocaleString()}`);
+        }
+        window.onload = () => {
+            //setTimeout : 일정시간 후에 한번 실행
+            let timeout_id = setTimeout(() => {
+                console.log(`5초 뒤에 실행 - ${new Date().toLocaleString()}`);
+            },5000);
+            console.log(timeout_id);
+            timeout_id = setTimeout(timeoutTest, 10000);
+            console.log(timeout_id);
+            //해당 timeout을 취소
+            document.querySelector('#out').onclick = () => clearTimeout(timeout_id);
+
+            let interval_id = setInterval(()=>{
+                console.log(`3초 마다 실행 - ${new Date().toLocaleString()}`);
+            },3000);
+            console.log(interval_id);
+            document.querySelector("#inter").onclick = () => clearInterval(interval_id);
+        }
+    </script>
+</head>
+<body>
+    <button id="inter">Interval Stop</button>
+    <button id="out">Timeout Stop</button>
+</body>
+</html>
