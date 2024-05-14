@@ -49,7 +49,29 @@
     </style>
     <script>
         window.onload = () =>{
-           
+           //섬네일 이미지 클릭시 메인 이미지를 변경
+           //1. 섬네일 이미지를 전부 선택
+           //2. 클릭이벤트를 적용
+           //3. 클릭이벤트에서는 클릭한 이미지 경로를 메인 이미지의 경로를 변경
+           document.querySelectorAll('.thumnail > img').forEach((obj) => {
+            obj.onclick = (e) => {
+                document.querySelector('.main_img').src = e.target.src;
+            }
+           });
+           let thumnailBarWidth = document.querySelector('.thumnail_bar').clientWidth;
+           let thumnailWidth = document.querySelector('.thumnail').clientWidth;
+           let idx = 0;
+           let options = {
+            duration : 500,
+            iterations : 1,
+            fill : 'forwards'
+           };
+           //왼쪽 화살표 클릭 했을때
+           document.querySelector('.left_arrow').onclick = () =>{
+                index++;
+                let left_move = {marginLeft : `-${index * 80}px`};
+                document.querySelector('.thumnail').animate(left_move,options);
+           }
         }
     </script>
 </head>
