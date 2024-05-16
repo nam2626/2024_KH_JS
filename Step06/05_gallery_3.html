@@ -1,61 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gallery</title>
     <style>
-        *{
-            margin:0;
+        * {
+            margin: 0;
             padding: 0;
         }
-        div{
+
+        div {
             border: 1px solid black;
         }
-        .thumnail_container{
+
+        .thumnail_container {
             width: 500px;
             margin: 0 auto;
             text-align: center;
             position: relative;
         }
-        .main_img{
+
+        .main_img {
             width: 400px;
             height: 400px;
         }
-        .thumnail_bar{
+
+        .thumnail_bar {
             width: 400px;
-            margin:0 auto;
+            margin: 0 auto;
             overflow: hidden;
         }
-        .thumnail{
+
+        .thumnail {
             width: 720px;
             font-size: 0px;
         }
-        .thumnail li{
+
+        .thumnail li {
             float: left;
         }
 
-        .thumnail img{
+        .thumnail img {
             width: 80px;
             height: 80px;
         }
-        .left_arrow, .right_arrow{
+
+        .left_arrow,
+        .right_arrow {
             position: absolute;
             bottom: 6px;
         }
-        .left_arrow{
+
+        .left_arrow {
             left: 0px;
         }
-        .right_arrow{
+
+        .right_arrow {
             right: 0px;
         }
     </style>
     <script>
-        window.onload = () =>{
-           
+        let slideMoving = false;
+
+        function left_event_arrow() {
+            let left_option = {
+                duration: 500,
+                iterations: 1,
+                fill: 'backwards'
+            };
+            if (slideMoving) return;
+            slideMoving = true;
+            let li = document.querySelector('.thumnail li:first-child');
+            li.animate({ marginLeft: '-80px' }, left_option).onfinish = () => {
+                slideMoving = false;
+                document.querySelector('.thumnail').append(li);
+                //메인 이미지 처리
+                document.querySelector('.thumnail li:first-child > img').onclick();
+            };
+        }
+
+        window.onload = () => {
+            let right_prev_option = {
+                duration: 0,
+                iterations: 1,
+                fill: 'forwards'
+            }
+            let right_after_option = {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            }
+            //섬네일 이미지 클릭시 메인 이미지 변경
+            document.querySelectorAll('.thumnail img').forEach((item) => {
+                item.onclick = function (e) {
+                    document.querySelector('.main_img').src = this.src;
+                    document.querySelectorAll('.thumnail img').forEach((obj) => obj.style.opacity = obj == item ? 1 : 0.5);
+
+                }
+            });
+            let intervalID = setInterval(left_event_arrow, 5000);
+            document.querySelector('.left_arrow').onclick = function (e) {
+                left_event_arrow();
+                clearInterval(intervalID);
+            };
+            document.querySelector('.right_arrow').onclick = function (e) {
+                if (slideMoving) return;
+                slideMoving = true;
+                let li = document.querySelector('.thumnail li:last-child');
+                //맨 마지막 항목을 -80px 먼저 땡김 - animate로 적용
+                li.animate({ marginLeft: '-80px' }, right_prev_option);
+                //맨 마지막 항목을 맨 앞으로 이동 - prepend
+                document.querySelector('.thumnail').prepend(li);
+                //맨 마지막 항목을 왼쪽 여백을 0px로 변경 - animate
+                li.animate({ marginLeft: '0px' }, right_after_option).onfinish = () => {
+                    slideMoving = false;
+                    //메인 이미지 처리
+                    document.querySelector('.thumnail li:first-child > img').onclick();
+                };
+                clearInterval(intervalID);
+            };
         }
     </script>
 </head>
+
 <body>
     <div class="thumnail_container">
         <img src="image/1.jpg" class="main_img">
@@ -76,4 +145,5 @@
         <a class="right_arrow"><img src="image/right_arrow.png" alt=""></a>
     </div>
 </body>
+
 </html>
