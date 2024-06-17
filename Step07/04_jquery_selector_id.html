@@ -7,7 +7,15 @@
     <title>jQuery</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-       
+       $(() => {
+            //로그인 버튼 선택
+            $('button').click(function(e){
+                console.log(e.target);
+                console.log($('#id').val(),$('#password').val());
+                // 아이디와 암호를 result 영역에 출력
+                $("#result").html(`<h3>${$('#id').val()} / ${$('#password').val()}</h3>`);
+            });
+       });
     </script>
 </head>
 <body>
