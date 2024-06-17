@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 200px;
+            top : 100px;
+            left: 100px;
+            font-size: 0px;
+            position: absolute;
+            border:1px solid black;
+        }
+        .container img{
+            width: 100%;
+        }
+        .container a{
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+            position: absolute;
+            top : 0px;
+            right: 0px;
+            color : white;
+            text-decoration: none;
+        }
+        #pop_nav{
+            font-size: 16px;
+            padding: 4px 2px;
+            background-color: gray;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      
+        $(function(){
+         
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="#">X</a> <img alt="" src="img/tree.jpg">
+        <div id="pop_nav"><input type="checkbox" class="chk" value="pop1"> 다시보지 않기</div>
+    </div>
+    <div class="container" style="top: 400px;">
+        <a href="#">X</a> <img alt="" src="img/tree.jpg">
+        <div id="pop_nav"><input type="checkbox" class="chk" value="pop2"> 다시보지 않기</div>
+    </div>
+    <div class="container" style="left: 400px;">
+        <a href="#">X</a> <img alt="" src="img/tree.jpg">
+        <div id="pop_nav"><input type="checkbox" class="chk" value="pop3"> 다시보지 않기</div>
+    </div>
+</body>
+</html>

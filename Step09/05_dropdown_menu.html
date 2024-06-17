@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            width: 1200px;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        nav ul{
+            list-style-type: none;
+        }
+        #main_menu{
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+        }
+        li{
+            width: 240px;
+        }
+        #main_menu a:link,#main_menu a:visited{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0px;
+            color:black;
+            font-size: 1em;
+            text-decoration: none;
+            border:1px solid black;
+            box-sizing: border-box;
+        }
+        .sub_menu a:link,.sub_menu a:visited{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0px;
+            color:blueviolet;
+            font-size: 0.8em;
+            text-decoration: none;
+            border:1px solid black;
+            box-sizing: border-box;
+        }
+        #sub_menu_container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            
+
+        });
+
+    </script>
+</head>
+<body>
+    <nav>
+        <ul id="main_menu">
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </ul>
+        <div id="sub_menu_container">
+            <ul class="sub_menu">
+                <li><a href="#">메뉴1-1</a></li>
+                <li><a href="#">메뉴1-2</a></li>
+                <li><a href="#">메뉴1-3</a></li>
+                <li><a href="#">메뉴1-4</a></li>
+                <li><a href="#">메뉴1-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴2-1</a></li>
+                <li><a href="#">메뉴2-2</a></li>
+                <li><a href="#">메뉴2-3</a></li>
+                <li><a href="#">메뉴2-4</a></li>
+                <li><a href="#">메뉴2-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴3-1</a></li>
+                <li><a href="#">메뉴3-2</a></li>
+                <li><a href="#">메뉴3-3</a></li>
+                <li><a href="#">메뉴3-4</a></li>
+                <li><a href="#">메뉴3-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴4-1</a></li>
+                <li><a href="#">메뉴4-2</a></li>
+                <li><a href="#">메뉴4-3</a></li>
+                <li><a href="#">메뉴4-4</a></li>
+                <li><a href="#">메뉴4-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴5-1</a></li>
+                <li><a href="#">메뉴5-2</a></li>
+                <li><a href="#">메뉴5-3</a></li>
+                <li><a href="#">메뉴5-4</a></li>
+                <li><a href="#">메뉴5-5</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

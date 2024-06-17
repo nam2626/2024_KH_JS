@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*스크롤바를 부드럽게 움직임*/
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            height: 969px;
+            /* border:1px solid red; */
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 30px;
+            font-size: 60px;
+            position: fixed;
+            right: 40px;
+            display: inline-block;
+        }
+
+        button:first-of-type {
+            top: 300px;
+        }
+
+        button:last-of-type {
+            top: 500px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+          
+           
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <button id="back">▲</button>
+    <button id="next">▼</button>
+</body>
+
+</html>

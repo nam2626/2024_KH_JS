@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이미지</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .slide_container{
+            width: 1200px;
+            margin:0 auto;
+            position: relative;
+            border: 1px solid black;
+            overflow: hidden;
+            font-size: 0px;
+        }
+        .slide_img_container{
+            width: 4800px;
+            display: inline-block;
+            list-style-type: none;
+        }
+        .slide_img_container li{
+            width: 1200px;
+            float: left;
+        }
+        .slide_container button{
+            position: absolute;
+            height: 400px;
+            background-color: #ffffff80;
+            top : 0px;
+            border: none;
+        }
+        .slide_container button:hover{
+            background-color: #ffffffce;
+        }
+        .right_arrow {
+            right: 0px;
+        }
+        .radio_bar{
+            width: 100%;
+            position: absolute;
+            bottom: 5px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .radio{
+            width: 20px;
+            height: 20px;
+            border:2px solid #c9c9c9;
+            margin-right: 10px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 2px 2px white;
+        }
+
+        .select{
+            background-color: #c9c9c9;
+        }
+    </style>
+    <script>
+        $(function(){
+          
+        
+        });
+
+    </script>
+</head>
+<body>
+    <div class="slide_container">
+        <ul class="slide_img_container">
+            <li><img src="image/main_1.jpg" alt=""></li>
+            <li><img src="image/main_2.jpg" alt=""></li>
+            <li><img src="image/main_3.jpg" alt=""></li>
+            <li><img src="image/main_4.jpg" alt=""></li>
+        </ul>
+        <button class="left_arrow"><img src="image/left_arrow.png" alt=""></button>
+        <button class="right_arrow"><img src="image/right_arrow.png" alt=""></button>
+        <ul class="radio_bar">
+            <li class="radio select"></li>
+            <li class="radio"></li>
+            <li class="radio"></li>
+            <li class="radio"></li>
+        </ul>
+    </div>
+</body>
+</html>
