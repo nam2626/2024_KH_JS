@@ -8,7 +8,12 @@
     <title>jQuery</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        
+        $(function(){
+            $('.txt3').prevUntil().css('text-decoration','underline');
+            $('.txt3').prevUntil('.title').css('color','orange');
+            $('.txt3').nextUntil().css('color', 'red');
+            $('.txt3').nextUntil('.txt6').css('font-weight', 'bold');
+        })
     </script>
 </head>
 
