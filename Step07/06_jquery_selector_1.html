@@ -7,7 +7,16 @@
     <title>jQuery</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-      
+        $(function(){
+            //자식 선택자
+            //아이디 wrap의 자식인 h1 제목태그 선택, 배경색 노랑, 글자는 밑줄
+            let style = {'background-color':'yellow','text-decoration' : 'underline'};
+            $('#wrap > h1').css(style);
+
+            //아이디가 wrap 안에 있는 자식들중 p태그만 선택, 기울임꼴 적용
+            style = {'font-style' : 'italic'};
+            $('#wrap').children('p').css(style);
+        })
     </script>
 </head>
 <body>
