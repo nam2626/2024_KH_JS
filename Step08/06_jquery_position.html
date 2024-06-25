@@ -32,7 +32,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-        
+            $('p:first span').text($('.box').offset().top + " " + $('.box').offset().left);
+            $('p:last span').text($('.box').position().top + " " + $('.box').position().left);
         });
     </script>
 </head>
