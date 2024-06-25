@@ -32,7 +32,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
+            console.log($("#d1").width(),$("#d1").height());
+            console.log($("#d1").innerWidth(),$("#d1").innerHeight());
+            console.log($("#d1").outerWidth(),$("#d1").outerHeight());
             
+            console.log($("#d2").width(),$("#d2").height());
+            console.log($("#d2").innerWidth(),$("#d2").innerHeight());
+            console.log($("#d2").outerWidth(),$("#d2").outerHeight());
+
+            $("#d2").width(100);// 내용 영역을 100px로 설정
+            $("#d2").innerWidth(100);// 내용 영역 + padding 영역 == 100px
+            $("#d2").outerWidth(100);// 내용 영역 + padding 영역 + border 영역 == 100px
         });
     </script>
 </head>
